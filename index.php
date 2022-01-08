@@ -39,6 +39,8 @@
                 echo "j'ai trouvé la valeur ".array[$i];
             }
 
+            /* FONCTIONS */
+
             /* fonction sans param */
             function helloWorld () {
                 echo "Hello World<br>";
@@ -132,6 +134,27 @@
                 foreach ($param as $item) {
                     echo "parametre fourni: $param <br>";
                 }
+            }
+
+            /* METHODE SUR LES STRINGS */
+            /* addslashes() ajoute des antislash ds une chaine */
+            $monMot = "Aujourd'hui nous sommes le 8 janvier 2022";
+            echo $monMot . "<br>";
+
+            $monMot = addcslashes($monMot);
+            echo addslashes($monMot . "<br>");
+
+            /* count_chars() statisque du nombre de fois que la lettre est appelé */
+            $myMot = "Aujourd'hui nous sommes le 8 janvier, hier nous étions le 7 janvier";
+            $statistique = count_chars($myMot);
+            print_r($statistique);
+            // paramètre mode ( deuxième paramètre ) à 1a la méthode ne retourne que les caractères utilisés dans la chaîne.
+            $myMot = "Aujourd'hui nous sommes le 8 janvier, hier nous étions le 7 janvier";
+            $statistique = count_chars($myMot, 1);
+            foreach ($statistique as $char => $valeur) {
+                //$char est l'index du tableau , contient la val num de la lettre
+                // chr() permet de transformer char en carac
+                echo "le carctere " .chr($char) .  "est utilisé " . $valeur . "fois <br>";
             }
 
 
